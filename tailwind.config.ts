@@ -39,13 +39,14 @@ const config: Config = {
 };
 
 function addVariablesForColors({ addBase, theme }: any) {
-  let allColors = flattenColorPalette(theme("colors"));
-  let newVars = Object.fromEntries(
-    Object.entries(allColors).map(([key, val]) => [`--${key}`, val])
+  const allColors = flattenColorPalette(theme('colors'));
+  const newVars = Object.fromEntries(
+    Object.entries(allColors).map(([key, value]) => [`--${key}`, value])
   );
- 
+
   addBase({
-    ":root": newVars,
+    ':root': newVars,
   });
 }
+
 export default config;
